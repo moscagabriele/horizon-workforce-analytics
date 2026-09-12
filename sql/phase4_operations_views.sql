@@ -130,7 +130,7 @@ SELECT
     (SELECT COUNT(*) FROM v_ops_timesheet_detail) AS view_rows;
 
 -- 3. Task nullability sanity check: roughly 10% of rows should have a
---    NULL task_id, matching the Phase 2 generation logic.
+--    NULL task_id.
 SELECT
     COUNT(*) FILTER (WHERE task_id IS NULL) * 100.0 / COUNT(*) AS pct_null_task_id
 FROM v_ops_timesheet_detail;
@@ -139,7 +139,7 @@ FROM v_ops_timesheet_detail;
 SELECT COUNT(*) AS row_count FROM v_ops_project_utilization;
 
 -- 5. Sanity check: no project should show more billable + non-billable
---    hours than total_hours_logged (they should sum to it exactly).
+--    hours than total_hours_logged.
 --    A row here means the FILTER logic has a bug.
 SELECT project_id, project_name, total_hours_logged, billable_hours, non_billable_hours
 FROM v_ops_project_utilization
