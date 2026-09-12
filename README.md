@@ -153,4 +153,6 @@ every check currently passes.
 
 ## About This Project
 
-This project grew directly out of my day job running HR and workforce reporting as a BI Analyst — building department-level headcount, capacity dashboards for real stakeholders made clear how much of that value comes from the data model and pipeline underneath the dashboard, not the dashboard alone. Horizon lets me go deeper into the parts of that stack a day job built on an existing ERP and pre-built data sources doesn't require: schema design from scratch, a full PostgreSQL and SQL transformation layer, and Python-based data generation, all built end to end and validated with an explicit data quality process. All data here is synthetic, generated independently for this project: it doesn't use or represent any employer's data.
+This project grew directly out of my day job running HR and workforce reporting as a BI Analyst: building department-level headcount, capacity dashboards for real stakeholders made clear how much of that value comes from the data model and pipeline underneath the dashboard, not the dashboard alone. 
+
+Horizon lets me go deeper into the parts of that stack a day job built on an existing ERP and pre-built data sources doesn't require: schema design from scratch, a full PostgreSQL and SQL transformation layer, and Python-based data generation, all built end to end and validated with an explicit data quality process. All data here is synthetic, generated independently for this project: it doesn't use or represent any employer's data.
