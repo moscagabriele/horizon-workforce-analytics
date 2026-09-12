@@ -38,20 +38,6 @@ snowflaked branch. Fact tables connect to a small set of dimensions, and the
 `Department` lookups sit behind `Employee` rather than joining every
 fact table directly.
  
-### Why starflake rather than a pure star
- 
-A pure star would attach `Department` directly to every fact table. That would
-create two routes from a fact to the same dimension, for example, timesheet
-hours could be filtered by department either through the employee who logged
-them or through the project they were logged against. Power BI rejects
-ambiguous paths like this, and where it doesn't reject them outright, the
-results depend on which route the engine happens to pick.
- 
-Keeping `Department` and `Job` behind `Employee` means each fact table has
-exactly one path to each dimension. The cost is one extra hop in the
-relationship chain; the benefit is that every number has a single, explainable
-derivation.
- 
 ### Tables
  
 #### Dimensions
