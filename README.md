@@ -83,24 +83,26 @@ in the dashboard: see [`sql/00_data_quality_checks.sql`](sql/00_data_quality_che
 It checks row-count reconciliation against the source CSVs, referential
 integrity on the two joins not covered by a database-level foreign key
 (the `dim_date` joins), and business-logic sanity checks (rating ranges,
-date ordering, tenure bounds).
+date ordering, tenure bounds). Full check-by-check results from an actual
+run are recorded in [`docs/data_quality_results.md`](docs/data_quality_results.md) —
+every check currently passes.
  
-**Known limitations**:
+**Known limitations** (stated up front, not discovered by a reviewer):
 - The recruitment `stage` field is a current snapshot per application, not
-  a logged history of stage transitions, this dataset can report the
+  a logged history of stage transitions — this dataset can report the
   *distribution* of applications across stages, not a true funnel
   conversion rate.
 - Salary-by-gender and salary-by-job-level breakdowns are computed on a
-  200-person, 7-department, 5-level dataset, some cells are thin enough
+  200-person, 7-department, 5-level dataset — some cells are thin enough
   that the pattern should be treated as directional, not statistically
   robust.
 - All data is synthetic, generated with a fixed random seed for
-  reproducibility, this is a modeling and analysis exercise, not a
+  reproducibility — this is a modeling and analysis exercise, not a
   claim about a real organization.
 - `Ops Projects` retains the pre-aggregated hour columns from
   `v_ops_project_utilization` (total/billable/non-billable hours, %
   budget used) for reference, but every dashboard figure is computed
-  live from `Ops Timesheets` instead, keeping one source of truth for
+  live from `Ops Timesheets` instead — keeping one source of truth for
   capacity numbers rather than two that could drift apart.
 
 ## Tech Stack
