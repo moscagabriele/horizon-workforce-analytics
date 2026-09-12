@@ -121,7 +121,7 @@ every check currently passes.
 ## Repository Structure
  
 ```
-├── README.md
+├── README.md <- you are here (business narrative)
 ├── sql/
 │   ├── 01_create_tables.sql
 │   ├── 02_circular_fk_and_dim_date.sql
@@ -133,12 +133,14 @@ every check currently passes.
 │   └── 00_data_quality_checks.sql
 ├── python/
 │   └── generate_horizon_data.py
+├── output_csv/
+│   └── (14 CSVs — one per table, regenerable via generate_horizon_data.py)
 ├── docs/
 │   ├── data_dictionary.md
 │   ├── design_decisions.md
 │   └── data_quality_results.md
 └── dashboard/
-    └── horizon_dashboard.pbix (and PDF)
+    ├── horizon_dashboard.pbix (and PDF)
 ```
 
 ## How to Reproduce
