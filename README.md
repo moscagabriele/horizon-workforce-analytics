@@ -107,26 +107,34 @@ every check currently passes.
 ## Repository Structure
  
 ```
-├── README.md <- you are here (business narrative)
-├── sql/
-│   ├── 01_create_tables.sql
-│   ├── 02_circular_fk_and_dim_date.sql
-│   ├── 03_load_data_psql.sql
-│   ├── phase4_workforce_views.sql
-│   ├── phase4_operations_views.sql
-│   ├── phase4_talent_views.sql
-│   ├── phase4_orgmgmt_views.sql
-│   └── 00_data_quality_checks.sql
+├── README.md                        Business narrative and findings — start here
+├── LICENSE
+├── requirements.txt                 Python dependencies for the generator
+│
 ├── python/
-│   └── generate_horizon_data.py
-├── output_csv/
-│   └── (14 CSVs — one per table, regenerable via generate_horizon_data.py)
-├── docs/
-│   ├── data_dictionary.md
-│   ├── design_decisions.md
-│   └── data_quality_results.md
+│   └── generate_horizon_data.py     Seeded synthetic data generator → CSVs
+│
+├── output_csv/                      14 CSVs, one per table (regenerable, seeded)
+│
+├── sql/                           
+│   ├── 00_data_quality_checks.sql  
+│   ├── 01_create_tables.sql        
+│   ├── 02_circular_fk_and_dim_date.sql 
+│   ├── 03_load_data_psql.sql        
+│   ├── phase4_operations_views.sql 
+│   ├── phase4_orgmgmt_views.sql     
+│   ├── phase4_talent_views.sql     
+│   └── phase4_workforce_views.sql   
+│
+├── docs/                           
+│   ├── data_dictionary.md           Database schema: every table, grain, column
+│   ├── design_decisions.md          Why the schema and views look like this
+│   ├── power-query.md               Load layer: every M query
+│   ├── measures.md                  Report layer: all DAX measures
+│   └── data_quality_results.md      Check-by-check results from an actual run
+│
 └── dashboard/
-    ├── horizon_dashboard.pbix (and PDF)
+    └── horizon_dashboard.pbix       Power BI Desktop file and PDF
 ```
 
 ## How to Reproduce
