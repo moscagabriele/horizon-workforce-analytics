@@ -3,23 +3,13 @@
 **Business context:** Horizon is a fictional 200-person consulting/operations
 firm. This project answers the questions a CHRO and department heads would
 actually ask about headcount, project capacity, hiring, and employee
-development — not a technical exercise in SQL or Power BI syntax.
-
-> ⚠️ Fill in the bracketed placeholders below once Phase 7 (dashboard) is
-> finished and you've looked at the real output. Don't publish this file
-> with placeholders still in it — an unfilled template is worse than no
-> README, because it signals the project was left unfinished.
+development.
 
 ---
 
 ## Executive Summary
 
-[2-4 sentences, written LAST after you've seen your own dashboard. State the
-single most interesting/surprising insight your data actually shows, in
-plain business language, with a number attached. Example shape only —
-replace entirely: "Utilization sits at 68% company-wide, but Consulting
-runs 15 points above every other department while Marketing sits at 51% —
-a capacity imbalance worth ~[X] hours/month if rebalanced."]
+Horizon runs at 75% utilization company-wide, but capacity strain is concentrated in one place: HR is logging hours at 415% of its budgeted allocation, nearly triple the next-highest department (Consulting, at 151%), despite holding the smallest budget of any team (697 hours), and its task completion rate (62.5%) is no better than the company average, meaning the overrun isn't buying extra delivery. On the people side, turnover fell to 1.59% (down 9% year-over-year) and training completion rose to 79.2% (+2.3 points), but the average appraisal score slipped slightly to 3.58 (-1.6%), a small dip worth watching alongside the capacity pressure above, not yet a trend.
 
 ## Business Questions This Project Answers
 
@@ -31,39 +21,87 @@ a capacity imbalance worth ~[X] hours/month if rebalanced."]
 
 ## Key Insights & Recommendations
 
-[This is the section a hiring manager actually reads. 3-5 bullets, each
-one insight + one quantified, specific recommendation — not "improve
-retention" but "reduce Marketing's 51% utilization gap by reallocating
-X hours/month, worth approximately $Y in recovered billable capacity."
-Write these only after building the Phase 7 dashboard.]
+HR's capacity overrun is a budgeting problem, not a delivery one. HR logged 2,895 hours against a 697-hour budget (415% of plan, the only department over 200%), yet its task completion rate (62.5%) is no better than the company average, so the extra hours aren't buying extra output. Recommend HR's hours budget be rebuilt from actuals before the next planning cycle, rather than reallocating time from Operations, IT, or Finance; all three are also running 15–25% over their own budgets, so there's no real spare capacity to redirect.
+
+Manager capacity is thinnest exactly where headcount is growing. Headcount grew 9.9% year-over-year (172 → 189), but Marketing (2.3 direct reports per manager) and HR (2.5) already have the lowest span of control company-wide, against a 3.39 firm average. Recommend prioritizing Lead-level hires in those two departments before adding further headcount, to avoid compressing manager capacity further.
+
+The recruitment pipeline's largest single pool sits untouched at the earliest stage. 149 of 400 applications (37%) are currently in "Applied" status, more than any other stage, while only 30 have reached "Offer." Recommend a dedicated screening sprint targeting Applied-stage candidates, since that's where the biggest backlog of undecided applicants is concentrated.
+
+Training completion is improving on average, but unevenly across categories. Overall completion rose 2.3 points to 79.2%, but within that, Compliance sessions make up only 27.8% of completions versus 41.2% for Soft Skills. Recommend prioritizing Compliance completion specifically next cycle, it typically carries the most regulatory weight, and the healthy topline number is masking it lagging behind.
 
 ## Data Model
 
-[Insert a screenshot or link to your Power BI star schema / ERD here once
-Phase 6 is finalized. One sentence on why a star schema was chosen over
-querying the normalized OLTP tables directly.]
+The Power BI model is a **starflake**: a star schema with one deliberate
+snowflaked branch. Fact tables connect to a small set of dimensions, and the
+`Department` lookups sit behind `Employee` rather than joining every
+fact table directly.
+ 
+### Why starflake rather than a pure star
+ 
+A pure star would attach `Department` directly to every fact table. That would
+create two routes from a fact to the same dimension, for example, timesheet
+hours could be filtered by department either through the employee who logged
+them or through the project they were logged against. Power BI rejects
+ambiguous paths like this, and where it doesn't reject them outright, the
+results depend on which route the engine happens to pick.
+ 
+Keeping `Department` and `Job` behind `Employee` means each fact table has
+exactly one path to each dimension. The cost is one extra hop in the
+relationship chain; the benefit is that every number has a single, explainable
+derivation.
+ 
+### Tables
+ 
+#### Dimensions
+ 
+| Table | Grain | Source | Notes |
+|---|---|---|---|
+| `Employee` | One row per employee (200) | `v_workforce_headcount` merged with `v_workforce_org_structure` | Central dimension. Carries department and job attributes denormalized, plus manager and department-head links for the org-structure measures. |
+| `dim_date` | One row per calendar day (1,096) | Built in SQL, not generated in Python | Covers 2023-07-01 to 2026-06-30, matching the synthetic data window exactly. |
+| `Ops Projects` | One row per project (30) | `v_ops_project_utilization` | Used as a project dimension (name, client, status, budget hours). Its pre-aggregated hour columns are retained from the SQL layer but are not the source of any dashboard figure, see *Known limitations*. |
+| `hr_department`, `hr_job` | One row per department (7) / job title (25) | Base tables | Hidden from report view. Present to route relationships, not to be browsed. |
+| `hr_training`, `hr_leave_type` | One row per course (15) / leave category (4) | Base tables | Hidden. Their descriptive fields are already denormalized into the corresponding fact views. |
+ 
+#### Facts
+ 
+| Table | Grain | Source | Rows |
+|---|---|---|---|
+| `Ops Timesheets` | One row per person, per task, per day | `v_ops_timesheet_detail` | ~19,800 |
+| `Ops Tasks` | One row per task within a project | `project_task` | ~165 |
+| `Orgmgmt Leave` | One row per leave request | `v_orgmgmt_leave_summary` | 946 |
+| `Talent Appraisal` | One row per performance review event | `v_talent_appraisal_summary` | 459 |
+| `Talent Training` | One row per employee attending one course | `v_talent_training_completion` | 336 |
+| `Recruitment Applications` | One row per job application | `hr_recruitment_application` | 400 |
+| `hr_contract` | One row per contract period per employee | `hr_contract` | ~230 |
+
+<img width="1181" height="718" alt="image" src="https://github.com/user-attachments/assets/c1e8b495-85fd-436a-a254-bc71fc2906ac" />
 
 ## Data Quality
 
 Every load is validated against a standalone script before being trusted
-in the dashboard — see [`sql/00_data_quality_checks.sql`](sql/00_data_quality_checks.sql).
+in the dashboard: see [`sql/00_data_quality_checks.sql`](sql/00_data_quality_checks.sql).
 It checks row-count reconciliation against the source CSVs, referential
 integrity on the two joins not covered by a database-level foreign key
 (the `dim_date` joins), and business-logic sanity checks (rating ranges,
 date ordering, tenure bounds).
-
-**Known limitations** (stated up front, not discovered by a reviewer):
+ 
+**Known limitations**:
 - The recruitment `stage` field is a current snapshot per application, not
-  a logged history of stage transitions — this dataset can report the
+  a logged history of stage transitions, this dataset can report the
   *distribution* of applications across stages, not a true funnel
   conversion rate.
 - Salary-by-gender and salary-by-job-level breakdowns are computed on a
-  200-person, 7-department, 5-level dataset — some cells are thin enough
+  200-person, 7-department, 5-level dataset, some cells are thin enough
   that the pattern should be treated as directional, not statistically
   robust.
 - All data is synthetic, generated with a fixed random seed for
-  reproducibility — this is a modeling and analysis exercise, not a
+  reproducibility, this is a modeling and analysis exercise, not a
   claim about a real organization.
+- `Ops Projects` retains the pre-aggregated hour columns from
+  `v_ops_project_utilization` (total/billable/non-billable hours, %
+  budget used) for reference, but every dashboard figure is computed
+  live from `Ops Timesheets` instead, keeping one source of truth for
+  capacity numbers rather than two that could drift apart.
 
 ## Tech Stack
 
@@ -79,28 +117,12 @@ date ordering, tenure bounds).
 ## Repository Structure
 
 ```
-├── README.md                  <- you are here (business narrative)
-├── sql/
-│   ├── 01_create_tables.sql
-│   ├── 02_circular_fk_and_dim_date.sql
-│   ├── 03_load_data_psql.sql
-│   ├── phase4_workforce_views.sql
-│   ├── phase4_operations_views.sql
-│   ├── phase4_talent_views.sql
-│   ├── phase4_orgmgmt_views.sql
-│   └── 00_data_quality_checks.sql
-├── python/
-│   └── generate_horizon_data.py
-├── docs/
-│   ├── data_dictionary.md     <- [to write: one row per table/column]
-│   └── design_decisions.md    <- [to write: grain, circular FK, why views]
-└── dashboard/
-    └── horizon_dashboard.pbix (or screenshots, if file size is an issue)
+
 ```
 
 ## How to Reproduce
 
-1. Run `python/generate_horizon_data.py` to regenerate the CSVs (seeded — output is deterministic).
+1. Run `python/generate_horizon_data.py` to regenerate the CSVs (seeded, output is deterministic).
 2. Run `sql/01_create_tables.sql`, then `sql/03_load_data_psql.sql`, then `sql/02_circular_fk_and_dim_date.sql` in a fresh PostgreSQL database.
 3. Run `sql/phase4_*.sql` to build the reporting views.
 4. Run `sql/00_data_quality_checks.sql` and confirm all results match the expected values noted in its comments.
@@ -108,8 +130,4 @@ date ordering, tenure bounds).
 
 ## About This Project
 
-[One or two sentences on what you built and why — state it as work you did,
-not as an aspiration. No "aspiring analyst" framing, no "built for my
-portfolio using fictional data" disclaimer buried in the intro — the
-business framing above already makes that context clear without
-undermining it.]
+
