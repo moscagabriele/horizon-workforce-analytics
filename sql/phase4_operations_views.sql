@@ -108,9 +108,9 @@ SELECT
 
     -- Window function: ranks every project by hours logged, without
     -- collapsing the other columns the way a GROUP BY would.
-    RANK() OVER (ORDER BY COALESCE(h.total_hours_logged, 0) DESC) AS hours_rank
+    RANK() OVER (ORDER BY COALESCE(h.total_hours_logged, 0) DESC) AS hours_rank,
 
-    d.department_id,        -- ADDED: relationship key for Power BI
+    d.department_id
 
 FROM project_project p
 JOIN hr_department d      ON p.department_id = d.department_id
