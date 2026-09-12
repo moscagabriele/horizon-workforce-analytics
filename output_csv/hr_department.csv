@@ -1,0 +1,8 @@
+department_id,department_name,department_code,company_id,department_head_employee_id
+1,Consulting,CONS,1,1
+2,Operations,OPS,1,2
+3,IT,IT,1,7
+4,Human Resources,HR,1,
+5,Finance,FIN,1,3
+6,Sales,SALES,1,9
+7,Marketing,MKT,1,

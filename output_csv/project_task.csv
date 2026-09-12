@@ -1,0 +1,180 @@
+task_id,project_id,task_name,assigned_employee_id,status,planned_hours,created_date,due_date
+1,1,Enhanced methodical model,81,Done,99.18,2024-03-06,2024-04-11
+2,1,Streamlined leadingedge focus group,182,Done,29.04,2023-10-26,2023-11-23
+3,1,Enterprise-wide optimal Internet solution,197,Done,175.44,2024-02-05,2024-03-18
+4,1,Sharable mobile array,128,Done,58.98,2024-03-31,2024-04-06
+5,1,Phased grid-enabled installation,196,In Progress,17.86,2024-03-18,2024-04-28
+6,1,Managed fresh-thinking secured line,170,Done,146.47,2024-02-21,2024-03-07
+7,1,Customer-focused cohesive groupware,10,In Progress,117.93,2024-01-27,2024-02-10
+8,2,Open-source system-worthy methodology,119,To Do,68.23,2025-05-05,2025-05-22
+9,2,Horizontal stable initiative,112,In Progress,104.35,2025-05-10,2025-06-10
+10,2,Virtual neutral alliance,192,To Do,34.51,2025-07-08,2025-08-12
+11,2,Persevering background functionalities,179,Done,99.85,2025-05-17,2025-06-26
+12,2,Function-based fresh-thinking budgetary management,124,In Progress,183.13,2025-06-08,2025-07-03
+13,2,Visionary impactful migration,183,Done,156.22,2025-06-03,2025-07-12
+14,2,Adaptive stable moratorium,130,Done,44.91,2025-07-17,2025-08-07
+15,2,Persistent incremental application,81,Done,51.17,2025-05-22,2025-06-13
+16,3,Ergonomic multi-state hierarchy,187,In Progress,143.36,2026-02-05,2026-02-28
+17,3,Secured web-enabled methodology,151,Done,187.27,2024-10-28,2024-12-02
+18,3,Self-enabling leadingedge task-force,35,Done,118.11,2026-03-02,2026-03-24
+19,3,Business-focused demand-driven flexibility,94,Done,191.28,2025-06-17,2025-07-16
+20,3,Reactive clear-thinking forecast,13,Done,63.23,2026-03-11,2026-03-25
+21,4,Organic tangible matrix,177,Done,57.24,2025-04-03,2025-04-30
+22,4,Decentralized 4thgeneration product,145,In Progress,60.06,2026-05-18,2026-06-05
+23,4,Robust disintermediate strategy,165,To Do,150.25,2025-10-18,2025-10-31
+24,4,Diverse fault-tolerant neural-net,181,To Do,181.8,2025-09-15,2025-10-05
+25,4,Advanced neutral installation,16,In Progress,27.24,2025-09-01,2025-10-16
+26,4,Cross-group directional budgetary management,185,To Do,155.99,2025-12-17,2026-01-21
+27,4,Persistent bottom-line project,111,In Progress,133.36,2025-01-18,2025-02-27
+28,4,Distributed modular structure,78,In Progress,69.66,2026-05-15,2026-06-19
+29,5,Implemented multimedia strategy,64,Done,110.75,2024-01-15,2024-01-25
+30,5,Future-proofed intangible matrices,49,Done,187.31,2024-01-12,2024-01-28
+31,5,Phased dynamic knowledgebase,51,Done,187.83,2024-01-12,2024-02-11
+32,5,Reactive client-server info-mediaries,81,To Do,117.05,2024-02-14,2024-02-21
+33,5,Ergonomic radical migration,123,Done,197.91,2024-01-21,2024-02-16
+34,5,User-friendly client-driven architecture,38,Done,171.4,2024-03-17,2024-04-24
+35,5,Grass-roots zero administration utilization,32,In Progress,71.49,2024-03-07,2024-03-29
+36,5,Operative global toolset,5,In Progress,149.43,2024-03-06,2024-03-27
+37,6,Profit-focused encompassing ability,164,In Progress,172.38,2025-10-14,2025-10-31
+38,6,Horizontal uniform framework,88,Done,24.65,2025-09-02,2025-10-04
+39,6,Reverse-engineered optimal protocol,39,In Progress,99.67,2025-11-09,2025-11-20
+40,6,Pre-emptive coherent knowledge user,105,Done,53.22,2025-07-24,2025-07-29
+41,6,Public-key mission-critical hardware,157,Done,146.79,2025-07-29,2025-08-24
+42,7,Managed neutral task-force,18,In Progress,136.21,2024-09-06,2024-10-04
+43,7,Quality-focused homogeneous knowledgebase,110,In Progress,139.73,2025-04-03,2025-04-27
+44,7,Inverse content-based standardization,173,To Do,183.9,2026-06-17,2026-07-11
+45,8,Front-line object-oriented info-mediaries,61,In Progress,191.81,2025-03-28,2025-05-11
+46,8,Focused zero-defect installation,163,Done,79.74,2025-04-25,2025-05-09
+47,8,Balanced foreground synergy,145,Done,161.98,2025-06-21,2025-07-31
+48,8,Phased tertiary workforce,185,In Progress,152.91,2025-07-23,2025-08-10
+49,8,Multi-tiered human-resource protocol,121,Done,109.41,2025-08-04,2025-08-14
+50,9,Streamlined coherent methodology,18,To Do,167.12,2026-04-24,2026-06-04
+51,9,Automated clear-thinking middleware,145,Done,36.77,2026-06-18,2026-07-05
+52,9,Reverse-engineered full-range attitude,33,Done,138.62,2026-05-26,2026-07-03
+53,9,Organic bandwidth-monitored moderator,138,To Do,93.53,2026-06-28,2026-08-03
+54,9,Persevering 24/7 success,139,In Progress,87.76,2026-04-22,2026-05-26
+55,10,Digitized incremental projection,182,Done,162.93,2026-03-23,2026-05-02
+56,10,Distributed asynchronous leverage,70,Done,164.76,2026-06-16,2026-06-22
+57,10,Fundamental global process improvement,21,Done,16.7,2026-06-19,2026-07-07
+58,10,Team-oriented hybrid projection,18,Done,187.44,2026-04-29,2026-05-08
+59,10,Configurable full-range service-desk,78,To Do,86.5,2026-03-24,2026-04-28
+60,10,Public-key homogeneous functionalities,101,Done,198.63,2026-06-22,2026-07-05
+61,10,Self-enabling transitional task-force,103,Done,23.41,2026-05-03,2026-06-05
+62,11,Pre-emptive needs-based alliance,34,Done,42.27,2025-07-17,2025-07-30
+63,11,Secured asymmetric encoding,36,Done,147.75,2025-07-16,2025-08-15
+64,11,Self-enabling systemic forecast,81,To Do,96.9,2025-04-27,2025-05-02
+65,11,Focused value-added array,144,Done,80.82,2025-09-01,2025-10-10
+66,11,Optional bandwidth-monitored task-force,94,Done,37.78,2025-04-28,2025-05-18
+67,11,Sharable tertiary attitude,179,To Do,88.49,2025-04-18,2025-04-30
+68,11,Organic composite solution,57,In Progress,20.92,2025-09-13,2025-09-19
+69,11,Innovative 4thgeneration analyzer,161,Done,137.03,2025-07-31,2025-08-07
+70,12,Inverse analyzing frame,119,Done,52.99,2026-04-18,2026-04-25
+71,12,Multi-channeled holistic Internet solution,136,In Progress,198.75,2026-04-14,2026-04-22
+72,12,Digitized dynamic moderator,155,Done,122.8,2026-04-16,2026-05-27
+73,13,Open-source non-volatile software,82,In Progress,176.24,2025-11-09,2025-12-04
+74,13,Enterprise-wide composite conglomeration,112,In Progress,65.7,2025-09-30,2025-11-07
+75,13,Configurable reciprocal implementation,200,Done,183.02,2025-04-29,2025-06-08
+76,13,Secured systemic encoding,134,Done,17.0,2025-09-21,2025-10-23
+77,13,Proactive optimal circuit,86,Done,141.69,2025-07-11,2025-08-09
+78,13,Focused maximized productivity,103,Done,43.3,2025-07-27,2025-08-10
+79,13,Function-based logistical extranet,62,In Progress,65.74,2025-08-29,2025-10-03
+80,13,Synchronized 24/7 website,17,Done,115.98,2025-10-12,2025-10-26
+81,14,Persistent executive service-desk,106,In Progress,54.63,2025-09-01,2025-10-09
+82,14,Quality-focused cohesive archive,122,To Do,170.65,2025-08-10,2025-09-05
+83,14,Organic grid-enabled parallelism,16,In Progress,59.54,2025-08-02,2025-09-10
+84,14,Innovative scalable interface,13,Done,175.74,2025-09-09,2025-10-22
+85,14,Team-oriented eco-centric knowledgebase,60,Done,100.04,2025-08-09,2025-09-20
+86,14,Innovative dedicated info-mediaries,5,Done,48.67,2025-09-21,2025-10-17
+87,15,Polarized bi-directional encoding,189,In Progress,124.05,2025-01-13,2025-02-17
+88,15,Multi-tiered object-oriented help-desk,149,In Progress,69.75,2025-01-24,2025-02-23
+89,15,Re-engineered explicit standardization,144,Done,132.55,2025-02-03,2025-03-04
+90,15,Implemented 3rdgeneration protocol,139,Done,177.5,2025-02-06,2025-02-27
+91,16,Object-based even-keeled access,57,Done,79.18,2025-09-19,2025-10-24
+92,16,Re-contextualized systemic time-frame,61,Done,150.32,2025-12-08,2025-12-15
+93,16,User-friendly actuating portal,157,Done,119.2,2025-08-29,2025-09-19
+94,16,User-friendly modular forecast,54,In Progress,71.33,2025-12-09,2026-01-01
+95,16,Vision-oriented discrete portal,135,In Progress,113.72,2025-11-30,2026-01-10
+96,16,Multi-channeled directional productivity,197,Done,131.21,2025-11-19,2025-12-10
+97,17,Ergonomic regional extranet,47,Done,34.87,2025-08-26,2025-09-10
+98,17,Synergistic web-enabled success,146,In Progress,198.14,2025-09-17,2025-10-23
+99,17,Visionary stable software,22,To Do,189.48,2025-05-16,2025-06-23
+100,17,Devolved responsive attitude,112,To Do,34.4,2025-10-19,2025-10-27
+101,17,Self-enabling secondary analyzer,193,To Do,37.0,2025-10-09,2025-10-28
+102,17,Integrated zero tolerance intranet,101,Done,19.61,2025-06-25,2025-08-01
+103,18,Automated optimal hierarchy,2,To Do,110.18,2026-06-16,2026-07-22
+104,18,Upgradable clear-thinking array,143,To Do,146.66,2026-06-07,2026-06-12
+105,18,Implemented fresh-thinking synergy,136,To Do,164.13,2026-06-23,2026-07-16
+106,18,Operative context-sensitive customer loyalty,27,To Do,108.68,2026-06-10,2026-06-26
+107,18,De-engineered zero tolerance moratorium,142,Done,56.46,2026-05-16,2026-06-02
+108,18,Multi-lateral multi-tasking middleware,23,Done,79.63,2026-05-31,2026-06-22
+109,18,Future-proofed composite extranet,67,Done,198.12,2026-06-06,2026-07-10
+110,18,Polarized explicit synergy,177,To Do,198.4,2026-05-14,2026-06-07
+111,19,Mandatory bifurcated Local Area Network,104,Done,80.42,2024-01-09,2024-01-19
+112,19,Compatible client-server system engine,190,To Do,40.91,2024-05-01,2024-05-09
+113,19,Face-to-face systematic success,152,Done,195.65,2024-05-07,2024-06-08
+114,19,Synergistic hybrid website,63,To Do,48.59,2024-01-25,2024-03-03
+115,19,Realigned high-level array,14,Done,185.44,2024-05-25,2024-06-29
+116,19,Object-based 24/7 firmware,178,Done,14.32,2024-03-12,2024-04-20
+117,19,Public-key bottom-line knowledgebase,158,In Progress,35.68,2024-03-21,2024-03-27
+118,19,Multi-layered systematic synergy,45,Done,116.28,2024-04-11,2024-04-20
+119,20,Synergistic empowering paradigm,105,Done,153.08,2026-01-07,2026-02-15
+120,20,Multi-tiered scalable hub,94,Done,18.31,2025-09-01,2025-09-11
+121,20,Customer-focused systematic emulation,92,To Do,124.19,2026-01-31,2026-02-19
+122,20,Phased 4thgeneration process improvement,88,Done,13.69,2026-05-02,2026-06-14
+123,20,Realigned fresh-thinking pricing structure,63,Done,76.32,2025-11-08,2025-12-11
+124,20,Face-to-face secondary architecture,185,In Progress,120.49,2025-12-31,2026-02-01
+125,20,Sharable maximized standardization,80,Done,161.23,2026-01-02,2026-01-12
+126,21,Innovative solution-oriented installation,43,Done,80.96,2026-03-08,2026-03-18
+127,21,Customizable client-driven analyzer,98,Done,28.46,2026-03-29,2026-04-27
+128,21,Automated exuding methodology,98,Done,154.18,2026-02-19,2026-03-15
+129,21,Customizable bandwidth-monitored encoding,51,To Do,90.75,2026-03-16,2026-03-29
+130,21,Public-key client-driven info-mediaries,8,To Do,25.21,2026-06-29,2026-07-30
+131,21,Persevering holistic secured line,88,Done,173.83,2026-03-13,2026-04-25
+132,21,User-friendly tangible moratorium,106,Done,157.6,2026-02-21,2026-03-16
+133,21,Operative optimizing synergy,47,Done,139.58,2026-04-21,2026-06-01
+134,22,Upgradable coherent instruction set,73,Done,102.68,2026-01-03,2026-01-25
+135,22,Streamlined bandwidth-monitored matrix,75,Done,88.85,2025-12-15,2025-12-30
+136,22,Seamless incremental focus group,69,Done,189.29,2026-04-01,2026-04-10
+137,22,Automated system-worthy hub,160,Done,126.4,2026-06-01,2026-07-16
+138,23,Extended leadingedge intranet,2,Done,190.17,2025-10-30,2025-11-12
+139,23,Front-line high-level attitude,89,Done,92.52,2025-12-27,2026-02-09
+140,23,Synergized holistic moratorium,81,In Progress,69.57,2026-01-21,2026-03-05
+141,23,Stand-alone heuristic approach,49,Done,193.2,2025-11-23,2025-12-28
+142,23,Object-based even-keeled core,155,Done,158.14,2025-12-23,2026-01-15
+143,23,Decentralized logistical array,107,Done,78.08,2025-12-25,2026-01-23
+144,24,Switchable didactic project,50,Done,138.89,2025-07-24,2025-09-04
+145,24,Sharable radical adapter,193,Done,48.25,2025-08-16,2025-08-22
+146,24,Business-focused zero tolerance groupware,182,Done,103.87,2025-07-30,2025-08-08
+147,24,Fully-configurable clear-thinking toolset,69,In Progress,134.46,2025-08-21,2025-09-14
+148,24,Re-contextualized demand-driven architecture,21,Done,94.22,2025-08-26,2025-09-27
+149,24,Virtual neutral database,109,Done,110.6,2025-08-19,2025-09-23
+150,24,Reverse-engineered didactic emulation,12,Done,159.82,2025-08-25,2025-09-25
+151,25,Managed zero-defect circuit,173,Done,183.57,2025-07-21,2025-08-29
+152,25,Right-sized 24hour focus group,46,Done,132.22,2025-02-19,2025-03-11
+153,25,Digitized clear-thinking moratorium,89,Done,193.42,2025-02-03,2025-03-16
+154,25,Function-based context-sensitive budgetary management,29,To Do,57.68,2025-05-13,2025-05-24
+155,25,Switchable 4thgeneration capacity,156,Done,140.03,2025-06-02,2025-07-10
+156,26,Advanced heuristic utilization,125,Done,156.29,2025-11-10,2025-12-08
+157,26,Front-line optimizing Graphic Interface,94,In Progress,199.56,2025-11-28,2026-01-04
+158,26,Ameliorated context-sensitive firmware,113,Done,184.75,2025-11-14,2025-11-25
+159,26,Business-focused clear-thinking support,95,In Progress,67.88,2025-09-24,2025-10-06
+160,27,Operative multi-tasking budgetary management,95,Done,99.42,2026-05-21,2026-06-28
+161,27,User-friendly asymmetric leverage,20,Done,65.65,2026-06-05,2026-07-08
+162,27,Organized zero-defect hierarchy,175,Done,29.0,2026-05-15,2026-05-21
+163,27,Profound optimizing benchmark,48,Done,113.97,2026-05-18,2026-06-07
+164,27,Organized motivating definition,125,Done,52.52,2026-05-29,2026-07-08
+165,27,Seamless 6thgeneration superstructure,51,In Progress,130.97,2026-06-02,2026-07-17
+166,28,Switchable multi-state framework,54,Done,94.32,2025-08-22,2025-08-28
+167,28,Persevering secondary algorithm,192,To Do,49.24,2025-08-30,2025-09-28
+168,28,Centralized mission-critical initiative,30,Done,161.5,2025-07-23,2025-08-01
+169,28,Optimized systemic benchmark,88,Done,45.84,2025-09-27,2025-10-13
+170,28,Pre-emptive transitional intranet,143,Done,193.46,2025-06-11,2025-07-02
+171,28,Compatible attitude-oriented Graphic Interface,164,Done,83.37,2025-08-01,2025-09-13
+172,29,Robust client-server architecture,166,Done,41.13,2026-06-12,2026-07-09
+173,29,De-engineered even-keeled process improvement,24,Done,137.05,2026-06-09,2026-07-23
+174,29,Sharable optimal neural-net,83,In Progress,30.45,2026-06-10,2026-06-22
+175,30,Universal fresh-thinking implementation,106,Done,88.3,2026-03-08,2026-03-22
+176,30,Right-sized multi-tasking frame,115,Done,43.66,2025-10-17,2025-11-27
+177,30,Persevering motivating portal,150,In Progress,40.04,2026-02-21,2026-04-01
+178,30,Optional bandwidth-monitored utilization,85,In Progress,169.66,2025-11-24,2025-12-07
+179,30,Total bifurcated projection,4,Done,101.04,2026-02-17,2026-02-25

@@ -1,0 +1,31 @@
+job_id,job_title,department_id,job_level
+1,Junior Consultant,1,Junior
+2,Consultant,1,Mid
+3,Senior Consultant,1,Senior
+4,Engagement Manager,1,Lead
+5,Practice Director,1,Director
+6,Operations Analyst,2,Junior
+7,Operations Coordinator,2,Mid
+8,Operations Manager,2,Senior
+9,Head of Operations,2,Director
+10,IT Support Specialist,3,Junior
+11,Systems Administrator,3,Mid
+12,IT Project Lead,3,Senior
+13,IT Manager,3,Lead
+14,Head of IT,3,Director
+15,HR Coordinator,4,Junior
+16,HR Business Partner,4,Mid
+17,HR Manager,4,Senior
+18,Head of HR,4,Director
+19,Financial Analyst,5,Junior
+20,Accountant,5,Mid
+21,Finance Manager,5,Senior
+22,Head of Finance,5,Director
+23,Sales Development Rep,6,Junior
+24,Account Executive,6,Mid
+25,Senior Account Executive,6,Senior
+26,Sales Manager,6,Lead
+27,Marketing Coordinator,7,Junior
+28,Marketing Specialist,7,Mid
+29,Content Strategist,7,Mid
+30,Marketing Manager,7,Senior

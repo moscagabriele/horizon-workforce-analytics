@@ -1,0 +1,5 @@
+leave_type_id,leave_type_name,is_paid
+1,Annual,True
+2,Sick,True
+3,Unpaid,False
+4,Parental,True

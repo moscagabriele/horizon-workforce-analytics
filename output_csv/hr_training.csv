@@ -1,0 +1,16 @@
+training_id,training_name,category,delivery_method,duration_hours
+1,Excel for Analysts,Technical,Online,4
+2,SQL Fundamentals,Technical,Online,8
+3,Power BI Essentials,Technical,Online,6
+4,Project Management Basics,Technical,In-person,8
+5,Cybersecurity Awareness,Compliance,Online,2
+6,GDPR & Data Privacy,Compliance,Online,3
+7,Workplace Health & Safety,Compliance,In-person,2
+8,Anti-Harassment Training,Compliance,Online,2
+9,Effective Communication,Soft Skills,In-person,4
+10,Leadership Fundamentals,Soft Skills,In-person,12
+11,Negotiation Skills,Soft Skills,In-person,6
+12,Time Management,Soft Skills,Online,3
+13,Client Relationship Management,Soft Skills,In-person,6
+14,Public Speaking,Soft Skills,In-person,4
+15,Advanced Python for Data,Technical,Online,10
