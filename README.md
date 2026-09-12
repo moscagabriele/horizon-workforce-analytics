@@ -29,6 +29,8 @@ The recruitment pipeline's largest single pool sits untouched at the earliest st
 
 Training completion is improving on average, but unevenly across categories. Overall completion rose 2.3 points to 79.2%, but within that, Compliance sessions make up only 27.8% of completions versus 41.2% for Soft Skills. Recommend prioritizing Compliance completion specifically next cycle, it typically carries the most regulatory weight, and the healthy topline number is masking it lagging behind.
 
+<img width="1427" height="800" alt="image" src="https://github.com/user-attachments/assets/b78e45c5-55d8-4193-b50c-457fab0514f3" />
+
 ## Data Model
 
 The Power BI model is a **starflake**: a star schema with one deliberate
