@@ -75,7 +75,7 @@ date ordering, tenure bounds). Full check-by-check results from an actual
 run are recorded in [`docs/data_quality_results.md`](docs/data_quality_results.md) —
 every check currently passes.
  
-**Known limitations** (stated up front, not discovered by a reviewer):
+**Known limitations**:
 - The recruitment `stage` field is a current snapshot per application, not
   a logged history of stage transitions — this dataset can report the
   *distribution* of applications across stages, not a true funnel
