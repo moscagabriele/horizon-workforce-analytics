@@ -117,9 +117,26 @@ every check currently passes.
 | Measures | DAX |
 
 ## Repository Structure
-
+ 
 ```
-
+├── README.md
+├── sql/
+│   ├── 01_create_tables.sql
+│   ├── 02_circular_fk_and_dim_date.sql
+│   ├── 03_load_data_psql.sql
+│   ├── phase4_workforce_views.sql
+│   ├── phase4_operations_views.sql
+│   ├── phase4_talent_views.sql
+│   ├── phase4_orgmgmt_views.sql
+│   └── 00_data_quality_checks.sql
+├── python/
+│   └── generate_horizon_data.py
+├── docs/
+│   ├── data_dictionary.md
+│   ├── design_decisions.md
+│   └── data_quality_results.md
+└── dashboard/
+    └── horizon_dashboard.pbix (and PDF)
 ```
 
 ## How to Reproduce
