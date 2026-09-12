@@ -1,19 +1,19 @@
 # Data Dictionary
 
-Documents the raw PostgreSQL schema built in `sql/01_create_tables.sql` and `sql/02_circular_fk_and_dim_date.sql` — the source tables everything else is built on top of. For how these tables are reshaped into the Power BI star schema, see the **Data Model** section of the main README instead — this file documents the database layer, not the report layer.
+Documents the raw PostgreSQL schema built in `sql/01_create_tables.sql` and `sql/02_circular_fk_and_dim_date.sql`, the source tables everything else is built on top of. For how these tables are reshaped into the Power BI star schema, see the **Data Model** section of the main README instead, this file documents the database layer, not the report layer.
 
-Value lists (e.g. what `job_level` actually contains) come from `python/generate_horizon_data.py`, since several fields are plain `VARCHAR`in the DDL with no `CHECK` constraint — the generation script is the only place the real set of values is defined.
+Value lists (e.g. what `job_level` actually contains) come from `python/generate_horizon_data.py`, since several fields are plain `VARCHAR`in the DDL with no `CHECK` constraint, the generation script is the only place the real set of values is defined.
 
 ---
 
 ## res_company
 
-**Grain:** one row — the company itself.
+**Grain:** one row, the company itself.
 
 | Column | Type | Description |
 |---|---|---|
 | `company_id` | INT, PK | Unique identifier. |
-| `company_name` | VARCHAR | "Horizon" — the single fictional company this dataset represents. |
+| `company_name` | VARCHAR | "Horizon", the single fictional company this dataset represents. |
 | `founded_year` | INT | |
 | `headquarters_city` | VARCHAR | |
 | `headquarters_country` | VARCHAR | |
@@ -29,7 +29,7 @@ Value lists (e.g. what `job_level` actually contains) come from `python/generate
 | `department_name` | VARCHAR | |
 | `department_code` | VARCHAR | Short code (e.g. `CONS`, `OPS`, `IT`). |
 | `company_id` | INT, FK → res_company | |
-| `department_head_employee_id` | INT, FK → hr_employee | Nullable. Added via `ALTER TABLE` after `hr_employee` exists — see `design_decisions.md` for why. |
+| `department_head_employee_id` | INT, FK → hr_employee | Nullable. Added via `ALTER TABLE` after `hr_employee` exists, see `design_decisions.md` for why. |
 
 ## hr_job
 
@@ -53,10 +53,10 @@ Value lists (e.g. what `job_level` actually contains) come from `python/generate
 | `gender` | VARCHAR | `Female` or `Male`. |
 | `date_of_birth` | DATE | |
 | `hire_date` | DATE, NOT NULL | |
-| `termination_date` | DATE, nullable | `NULL` = still employed. There is deliberately no separate `employment_status` column — active/terminated is always derived as `termination_date IS NULL`, never stored twice. |
+| `termination_date` | DATE, nullable | `NULL` = still employed. There is deliberately no separate `employment_status` column, active/terminated is always derived as `termination_date IS NULL`, never stored twice. |
 | `department_id` | INT, FK → hr_department | |
 | `job_id` | INT, FK → hr_job | |
-| `manager_employee_id` | INT, FK → hr_employee (self-referencing) | Nullable — Directors have no manager. |
+| `manager_employee_id` | INT, FK → hr_employee (self-referencing) | Nullable, Directors have no manager. |
 | `email` | VARCHAR | |
 | `company_id` | INT, FK → res_company | |
 
@@ -76,7 +76,7 @@ Value lists (e.g. what `job_level` actually contains) come from `python/generate
 
 ## hr_leave_type
 
-**Grain:** one row per leave category (4 rows — fixed reference list, not generated).
+**Grain:** one row per leave category (4 rows, fixed reference list, not generated).
 
 | Column | Type | Description |
 |---|---|---|
@@ -121,7 +121,7 @@ Value lists (e.g. what `job_level` actually contains) come from `python/generate
 | `task_id` | INT, PK | |
 | `project_id` | INT, FK → project_project | |
 | `task_name` | VARCHAR | |
-| `assigned_employee_id` | INT, FK → hr_employee | Nullable — unassigned tasks are allowed. |
+| `assigned_employee_id` | INT, FK → hr_employee | Nullable, unassigned tasks are allowed. |
 | `status` | VARCHAR | `To Do`, `In Progress`, or `Done`. |
 | `planned_hours` | NUMERIC(8,2) | |
 | `created_date`, `due_date` | DATE | |
@@ -134,8 +134,8 @@ Value lists (e.g. what `job_level` actually contains) come from `python/generate
 |---|---|---|
 | `timesheet_id` | BIGINT, PK | `BIGINT` rather than `INT`, for headroom on the biggest table. |
 | `employee_id` | INT, FK → hr_employee | Who logged the hours. |
-| `project_id` | INT, FK → project_project | Deliberately duplicated here even though it's derivable via `task_id → project_task.project_id` — see `design_decisions.md`. |
-| `task_id` | INT, FK → project_task | Nullable — ~10% of lines are logged before a task exists yet. |
+| `project_id` | INT, FK → project_project | Deliberately duplicated here even though it's derivable via `task_id → project_task.project_id`, see `design_decisions.md`. |
+| `task_id` | INT, FK → project_task | Nullable, ~10% of lines are logged before a task exists yet. |
 | `work_date` | DATE, NOT NULL | |
 | `hours_logged` | NUMERIC(5,2) | |
 | `billable` | BOOLEAN | |
@@ -148,14 +148,14 @@ Value lists (e.g. what `job_level` actually contains) come from `python/generate
 |---|---|---|
 | `appraisal_id` | INT, PK | |
 | `employee_id` | INT, FK → hr_employee | The person being reviewed. |
-| `reviewer_employee_id` | INT, FK → hr_employee | The reviewer — usually the employee's manager. |
+| `reviewer_employee_id` | INT, FK → hr_employee | The reviewer, usually the employee's manager. |
 | `appraisal_date` | DATE, NOT NULL | |
 | `overall_rating` | INT | 1–5. Not `CHECK`-constrained at the database level. |
 | `promotion_recommended` | BOOLEAN | |
 
 ## hr_training
 
-**Grain:** one row per course in the catalogue (15 rows — fixed reference list).
+**Grain:** one row per course in the catalogue (15 rows, fixed reference list).
 
 | Column | Type | Description |
 |---|---|---|
@@ -187,8 +187,8 @@ Value lists (e.g. what `job_level` actually contains) come from `python/generate
 | `job_id` | INT, FK → hr_job | |
 | `candidate_name` | VARCHAR | |
 | `application_date` | DATE, NOT NULL | |
-| `stage` | VARCHAR | `Applied`, `Interview`, `Offer`, `Hired`, or `Rejected`. A current snapshot per application, not a logged history — see *Known limitations* in the README. |
-| `hired_employee_id` | INT, FK → hr_employee | Nullable — set only when `stage = 'Hired'`. |
+| `stage` | VARCHAR | `Applied`, `Interview`, `Offer`, `Hired`, or `Rejected`. A current snapshot per application, not a logged history, see *Known limitations* in the README. |
+| `hired_employee_id` | INT, FK → hr_employee | Nullable, set only when `stage = 'Hired'`. |
 
 ## dim_date
 
