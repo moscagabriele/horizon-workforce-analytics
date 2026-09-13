@@ -15,7 +15,7 @@ Horizon runs at 75% utilization company-wide, but capacity strain is concentrate
 
 - **Workforce:** What does headcount, turnover, and tenure look like across departments and job levels?
 - **Capacity:** How efficiently is billable time being used against project budgets?
-- **Recruitment:** Where is the hiring pipeline losing candidates, and how fast is time-to-hire?
+- **Recruitment:** How are applications distributed across the pipeline, and how long does hiring take?
 - **Talent:** Is training completion and performance review coverage keeping pace with headcount?
 - **Organisational management:** How flat or hierarchical is the org, and how is leave being used?
 
@@ -25,7 +25,7 @@ HR's capacity overrun is a budgeting problem, not a delivery one. HR logged 2,89
 
 Manager capacity is thinnest exactly where headcount is growing. Headcount grew 9.9% year-over-year (172 → 189), but Marketing (2.3 direct reports per manager) and HR (2.5) already have the lowest span of control company-wide, against a 3.39 firm average. Recommend prioritizing Lead-level hires in those two departments before adding further headcount, to avoid compressing manager capacity further.
 
-The recruitment pipeline's largest single pool sits untouched at the earliest stage. 149 of 400 applications (37%) are currently in "Applied" status, more than any other stage, while only 30 have reached "Offer." Recommend a dedicated screening sprint targeting Applied-stage candidates, since that's where the biggest backlog of undecided applicants is concentrated.
+The recruitment pipeline is heavily weighted toward its earliest stage. 149 of 400 applications (37%) currently sit at "Applied" — more than any other stage — while 30 are at "Offer" and 46 resulted in a hire. Because stage records only an application's current status and not the dates it moved between stages, this is a snapshot of where applications stand, not a measure of where candidates drop out. Acting on it would mean reviewing the Applied pool first, since it's the largest; establishing whether it's genuinely stalled would require stage-transition history the source system doesn't capture.
 
 Training completion is improving on average, but unevenly across categories. Overall completion rose 2.3 points to 79.2%, but within that, Compliance sessions make up only 27.8% of completions versus 41.2% for Soft Skills. Recommend prioritizing Compliance completion specifically next cycle, it typically carries the most regulatory weight, and the healthy topline number is masking it lagging behind.
 
@@ -92,6 +92,7 @@ every check currently passes.
   budget used) for reference, but every dashboard figure is computed
   live from `Ops Timesheets` instead — keeping one source of truth for
   capacity numbers rather than two that could drift apart.
+- `budget_hours` is generated independently of timesheet volume, so Budget Hours Used % has no meaningful relationship between numerator and denominator. The measure is correct; its inputs aren't comparable. Task status is drawn from a distribution identical across all projects, so task completion rate cannot differ by department. Do not read cross-department comparisons of it.
 
 ## Tech Stack
 
