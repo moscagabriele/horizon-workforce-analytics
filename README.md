@@ -107,12 +107,10 @@ every check currently passes.
 ## Repository Structure
  
 ```
-├── README.md                        Business narrative and findings — start here
-├── LICENSE
-├── requirements.txt                 Python dependencies for the generator
+├── README.md                        Business narrative and findings
 │
 ├── python/
-│   └── generate_horizon_data.py     Seeded synthetic data generator → CSVs
+│   └── generate_horizon_data.py     Seeded synthetic data generator
 │
 ├── output_csv/                      14 CSVs, one per table (regenerable, seeded)
 │
@@ -134,7 +132,7 @@ every check currently passes.
 │   └── data_quality_results.md      Check-by-check results from an actual run
 │
 └── dashboard/
-    └── horizon_dashboard.pbix       Power BI Desktop file and PDF
+    └── horizon_dashboard.pbix       Power BI file and PDF
 ```
 
 ## How to Reproduce
@@ -149,4 +147,6 @@ every check currently passes.
 
 This project grew directly out of my day job running HR and workforce reporting as a BI Analyst: building department-level headcount, capacity dashboards for real stakeholders made clear how much of that value comes from the data model and pipeline underneath the dashboard, not the dashboard alone. 
 
-Horizon lets me go deeper into the parts of that stack a day job built on an existing ERP and pre-built data sources doesn't require: schema design from scratch, a full PostgreSQL and SQL transformation layer, and Python-based data generation, all built end to end and validated with an explicit data quality process. All data here is synthetic, generated independently for this project: it doesn't use or represent any employer's data.
+Horizon lets me go deeper into the parts of that stack a day job built on an existing ERP and pre-built data sources doesn't require: schema design from scratch, a full PostgreSQL and SQL transformation layer, and Python-based data generation, all built end to end and validated with an explicit data quality process. 
+
+All data here is synthetic, generated independently for this project: it doesn't use or represent any real employer's data.
